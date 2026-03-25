@@ -1,4 +1,4 @@
-```markdown
+```mermaid
 classDiagram
 
 class Produto {
@@ -48,10 +48,10 @@ class Movimentacao {
 +registrarSaida()
 }
 
-Categoria "1" --> "0.._" Produto
-Fornecedor "1" --> "0.._" Produto
+Categoria "1" --> "0..*" Produto
+Fornecedor "1" --> "0..*" Produto
 Produto "1" --> "1" Estoque
-Produto "1" --> "0.._" LoteEstoque
-Produto "1" --> "0.._" Movimentacao
-LoteEstoque "0..1" --> "0..\*" Movimentacao
+Produto "1" --> "0..*" LoteEstoque
+Produto "1" --> "0..*" Movimentacao
+LoteEstoque "0..1" --> "0..*" Movimentacao
 ```
