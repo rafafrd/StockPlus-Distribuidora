@@ -11,6 +11,7 @@
 ![Arquitetura](https://img.shields.io/badge/arquitetura-em%20camadas-blueviolet?style=flat-square)
 ![Padrão](https://img.shields.io/badge/padrão-Factory%20Method-orange?style=flat-square)
 ![OOP](https://img.shields.io/badge/paradigma-OOP-informational?style=flat-square)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=rafafrd_StockPlus-Distribuidora&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=rafafrd_StockPlus-Distribuidora)
 
 </div>
 
@@ -334,14 +335,14 @@ erDiagram
 
 ### Relacionamentos
 
-| Relacionamento          | Cardinalidade | Descrição                                          |
-| ----------------------- | ------------- | -------------------------------------------------- |
-| Categoria → Produto     | 1:N           | Uma categoria agrupa vários produtos               |
-| Fornecedor → Produto    | 1:N           | Um fornecedor fornece vários produtos              |
-| Produto → Estoque       | 1:1           | Cada produto possui um registro de estoque         |
-| Produto → LoteEstoque   | 1:N           | Um produto pode ter vários lotes                   |
-| Produto → Movimentacao  | 1:N           | Um produto pode ter várias movimentações           |
-| LoteEstoque → Movimentacao | 0..1:N     | Uma movimentação pode estar associada a um lote    |
+| Relacionamento             | Cardinalidade | Descrição                                       |
+| -------------------------- | ------------- | ----------------------------------------------- |
+| Categoria → Produto        | 1:N           | Uma categoria agrupa vários produtos            |
+| Fornecedor → Produto       | 1:N           | Um fornecedor fornece vários produtos           |
+| Produto → Estoque          | 1:1           | Cada produto possui um registro de estoque      |
+| Produto → LoteEstoque      | 1:N           | Um produto pode ter vários lotes                |
+| Produto → Movimentacao     | 1:N           | Um produto pode ter várias movimentações        |
+| LoteEstoque → Movimentacao | 0..1:N        | Uma movimentação pode estar associada a um lote |
 
 ---
 
@@ -359,13 +360,13 @@ erDiagram
 
 ### 🏭 Fornecedores — `/fornecedores`
 
-| Método   | Rota                | Descrição                  |
-| -------- | ------------------- | -------------------------- |
+| Método   | Rota                | Descrição                   |
+| -------- | ------------------- | --------------------------- |
 | `GET`    | `/fornecedores`     | Lista todos os fornecedores |
-| `GET`    | `/fornecedores/:id` | Busca fornecedor por ID    |
-| `POST`   | `/fornecedores`     | Cria um novo fornecedor    |
-| `PUT`    | `/fornecedores/:id` | Atualiza um fornecedor     |
-| `DELETE` | `/fornecedores/:id` | Remove um fornecedor       |
+| `GET`    | `/fornecedores/:id` | Busca fornecedor por ID     |
+| `POST`   | `/fornecedores`     | Cria um novo fornecedor     |
+| `PUT`    | `/fornecedores/:id` | Atualiza um fornecedor      |
+| `DELETE` | `/fornecedores/:id` | Remove um fornecedor        |
 
 ### 📦 Produtos — `/produtos`
 
@@ -379,33 +380,33 @@ erDiagram
 
 ### 🗃️ Estoque — `/estoque`
 
-| Método   | Rota            | Descrição                          |
-| -------- | --------------- | ---------------------------------- |
-| `GET`    | `/estoque`      | Lista todos os registros de estoque |
-| `GET`    | `/estoque/:id`  | Busca estoque por ID               |
-| `POST`   | `/estoque`      | Cria um registro de estoque        |
-| `PUT`    | `/estoque/:id`  | Atualiza um registro de estoque    |
-| `DELETE` | `/estoque/:id`  | Remove um registro de estoque      |
+| Método   | Rota           | Descrição                           |
+| -------- | -------------- | ----------------------------------- |
+| `GET`    | `/estoque`     | Lista todos os registros de estoque |
+| `GET`    | `/estoque/:id` | Busca estoque por ID                |
+| `POST`   | `/estoque`     | Cria um registro de estoque         |
+| `PUT`    | `/estoque/:id` | Atualiza um registro de estoque     |
+| `DELETE` | `/estoque/:id` | Remove um registro de estoque       |
 
 ### 📋 Lotes — `/lote-estoque`
 
-| Método   | Rota                  | Descrição               |
-| -------- | --------------------- | ----------------------- |
-| `GET`    | `/lote-estoque`       | Lista todos os lotes    |
-| `GET`    | `/lote-estoque/:id`   | Busca lote por ID       |
-| `POST`   | `/lote-estoque`       | Cria um novo lote       |
-| `PUT`    | `/lote-estoque/:id`   | Atualiza um lote        |
-| `DELETE` | `/lote-estoque/:id`   | Remove um lote          |
+| Método   | Rota                | Descrição            |
+| -------- | ------------------- | -------------------- |
+| `GET`    | `/lote-estoque`     | Lista todos os lotes |
+| `GET`    | `/lote-estoque/:id` | Busca lote por ID    |
+| `POST`   | `/lote-estoque`     | Cria um novo lote    |
+| `PUT`    | `/lote-estoque/:id` | Atualiza um lote     |
+| `DELETE` | `/lote-estoque/:id` | Remove um lote       |
 
 ### 🔄 Movimentações — `/movimentacao`
 
-| Método   | Rota                  | Descrição                    |
-| -------- | --------------------- | ---------------------------- |
-| `GET`    | `/movimentacao`       | Lista todas as movimentações |
-| `GET`    | `/movimentacao/:id`   | Busca movimentação por ID    |
-| `POST`   | `/movimentacao`       | Registra uma movimentação    |
-| `PUT`    | `/movimentacao/:id`   | Atualiza uma movimentação    |
-| `DELETE` | `/movimentacao/:id`   | Remove uma movimentação      |
+| Método   | Rota                | Descrição                    |
+| -------- | ------------------- | ---------------------------- |
+| `GET`    | `/movimentacao`     | Lista todas as movimentações |
+| `GET`    | `/movimentacao/:id` | Busca movimentação por ID    |
+| `POST`   | `/movimentacao`     | Registra uma movimentação    |
+| `PUT`    | `/movimentacao/:id` | Atualiza uma movimentação    |
+| `DELETE` | `/movimentacao/:id` | Remove uma movimentação      |
 
 ### Mapa de Rotas
 
@@ -502,12 +503,12 @@ mindmap
         Factory Methods tipados
 ```
 
-| Padrão                   | Onde é Aplicado                                                     | Benefício                                                                      |
-| ------------------------ | ------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| **Factory Method**       | Métodos estáticos `criar` e `fromDB` em todos os models             | Controla criação de objetos, centraliza validações, evita instâncias inválidas |
-| **Repository Pattern**   | `*Repository` — um por entidade                                     | Isola o SQL, torna o Service agnóstico ao banco, facilita manutenção           |
-| **Singleton**            | `db.connection.ts` — pool de conexão único                          | Evita múltiplas conexões abertas, otimiza uso de recursos                      |
-| **Layered Architecture** | Toda a estrutura do projeto                                         | Separação clara de responsabilidades e manutenibilidade                        |
+| Padrão                   | Onde é Aplicado                                         | Benefício                                                                      |
+| ------------------------ | ------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **Factory Method**       | Métodos estáticos `criar` e `fromDB` em todos os models | Controla criação de objetos, centraliza validações, evita instâncias inválidas |
+| **Repository Pattern**   | `*Repository` — um por entidade                         | Isola o SQL, torna o Service agnóstico ao banco, facilita manutenção           |
+| **Singleton**            | `db.connection.ts` — pool de conexão único              | Evita múltiplas conexões abertas, otimiza uso de recursos                      |
+| **Layered Architecture** | Toda a estrutura do projeto                             | Separação clara de responsabilidades e manutenibilidade                        |
 
 ---
 
@@ -515,21 +516,21 @@ mindmap
 
 ### Dependências de Produção
 
-| Pacote      | Versão  | Uso                                  |
-| ----------- | ------- | ------------------------------------ |
-| `express`   | 5.x     | Framework HTTP                       |
-| `mysql2`    | 3.x     | Driver MySQL com suporte a Pool      |
-| `dotenv`    | latest  | Leitura de variáveis de ambiente     |
+| Pacote    | Versão | Uso                              |
+| --------- | ------ | -------------------------------- |
+| `express` | 5.x    | Framework HTTP                   |
+| `mysql2`  | 3.x    | Driver MySQL com suporte a Pool  |
+| `dotenv`  | latest | Leitura de variáveis de ambiente |
 
 ### Dependências de Desenvolvimento
 
-| Pacote              | Versão  | Uso                         |
-| ------------------- | ------- | --------------------------- |
-| `typescript`        | 5.x     | Linguagem                   |
-| `ts-node`           | 10.x    | Execução de TypeScript      |
-| `nodemon`           | 3.x     | Live reload em desenvolvimento |
-| `@types/express`    | latest  | Tipagens Express            |
-| `@types/node`       | latest  | Tipagens Node.js            |
+| Pacote           | Versão | Uso                            |
+| ---------------- | ------ | ------------------------------ |
+| `typescript`     | 5.x    | Linguagem                      |
+| `ts-node`        | 10.x   | Execução de TypeScript         |
+| `nodemon`        | 3.x    | Live reload em desenvolvimento |
+| `@types/express` | latest | Tipagens Express               |
+| `@types/node`    | latest | Tipagens Node.js               |
 
 ---
 
