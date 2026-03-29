@@ -3,6 +3,7 @@ import { db, ExecutorQuery } from '../database/db.connection';
 import { IMovimentacao, Movimentacao } from '../models/movimentacao.model';
 
 export class MovimentacaoRepository {
+  // Listar todas as movimentações
   public async listarTodos(executor: ExecutorQuery = db): Promise<Movimentacao[]> {
     const [rows] = await executor.query<IMovimentacao[]>(
       `SELECT
