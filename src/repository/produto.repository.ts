@@ -3,6 +3,7 @@ import { db, ExecutorQuery } from '../database/db.connection';
 import { IProduto, Produto } from '../models/produto.model';
 
 export class ProdutoRepository {
+  // Listar todos os produtos
   public async listarTodos(executor: ExecutorQuery = db): Promise<Produto[]> {
     const [rows] = await executor.query<IProduto[]>(
       `SELECT
