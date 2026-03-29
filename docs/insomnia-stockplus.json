@@ -1,0 +1,516 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "resources": [
+    {
+      "_type": "workspace",
+      "_id": "wrk_stockplus_001",
+      "name": "API StockPlus CRUD"
+    },
+
+    {
+      "_type": "request_group",
+      "_id": "fld_api",
+      "parentId": "wrk_stockplus_001",
+      "name": "API"
+    },
+    {
+      "_type": "request",
+      "_id": "req_api_01",
+      "parentId": "fld_api",
+      "name": "GET - Status da API",
+      "method": "GET",
+      "url": "http://localhost:3000/",
+      "body": {}
+    },
+
+    {
+      "_type": "request_group",
+      "_id": "fld_categorias",
+      "parentId": "wrk_stockplus_001",
+      "name": "Categorias"
+    },
+    {
+      "_type": "request",
+      "_id": "req_cat_01",
+      "parentId": "fld_categorias",
+      "name": "GET - Listar todas",
+      "method": "GET",
+      "url": "http://localhost:3000/categorias",
+      "body": {}
+    },
+    {
+      "_type": "request",
+      "_id": "req_cat_02",
+      "parentId": "fld_categorias",
+      "name": "GET - Buscar por ID",
+      "method": "GET",
+      "url": "http://localhost:3000/categorias/1",
+      "body": {}
+    },
+    {
+      "_type": "request",
+      "_id": "req_cat_03",
+      "parentId": "fld_categorias",
+      "name": "POST - Criar",
+      "method": "POST",
+      "url": "http://localhost:3000/categorias",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"dc_categoria\": \"Bebidas\"\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_cat_03b",
+      "parentId": "fld_categorias",
+      "name": "POST - Criar (erro - descricao vazia)",
+      "method": "POST",
+      "url": "http://localhost:3000/categorias",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"dc_categoria\": \"\"\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_cat_04",
+      "parentId": "fld_categorias",
+      "name": "PUT - Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/categorias/1",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"dc_categoria\": \"Bebidas Geladas\"\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_cat_05",
+      "parentId": "fld_categorias",
+      "name": "DELETE - Remover",
+      "method": "DELETE",
+      "url": "http://localhost:3000/categorias/1",
+      "body": {}
+    },
+
+    {
+      "_type": "request_group",
+      "_id": "fld_fornecedores",
+      "parentId": "wrk_stockplus_001",
+      "name": "Fornecedores"
+    },
+    {
+      "_type": "request",
+      "_id": "req_for_01",
+      "parentId": "fld_fornecedores",
+      "name": "GET - Listar todos",
+      "method": "GET",
+      "url": "http://localhost:3000/fornecedores",
+      "body": {}
+    },
+    {
+      "_type": "request",
+      "_id": "req_for_02",
+      "parentId": "fld_fornecedores",
+      "name": "GET - Buscar por ID",
+      "method": "GET",
+      "url": "http://localhost:3000/fornecedores/1",
+      "body": {}
+    },
+    {
+      "_type": "request",
+      "_id": "req_for_03",
+      "parentId": "fld_fornecedores",
+      "name": "POST - Criar",
+      "method": "POST",
+      "url": "http://localhost:3000/fornecedores",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"dc_fornecedor\": \"Distribuidora Central\"\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_for_03b",
+      "parentId": "fld_fornecedores",
+      "name": "POST - Criar (erro - descricao vazia)",
+      "method": "POST",
+      "url": "http://localhost:3000/fornecedores",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"dc_fornecedor\": \"\"\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_for_04",
+      "parentId": "fld_fornecedores",
+      "name": "PUT - Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/fornecedores/1",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"dc_fornecedor\": \"Distribuidora Central Matriz\"\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_for_05",
+      "parentId": "fld_fornecedores",
+      "name": "DELETE - Remover",
+      "method": "DELETE",
+      "url": "http://localhost:3000/fornecedores/1",
+      "body": {}
+    },
+
+    {
+      "_type": "request_group",
+      "_id": "fld_produtos",
+      "parentId": "wrk_stockplus_001",
+      "name": "Produtos"
+    },
+    {
+      "_type": "request",
+      "_id": "req_pro_01",
+      "parentId": "fld_produtos",
+      "name": "GET - Listar todos",
+      "method": "GET",
+      "url": "http://localhost:3000/produtos",
+      "body": {}
+    },
+    {
+      "_type": "request",
+      "_id": "req_pro_02",
+      "parentId": "fld_produtos",
+      "name": "GET - Buscar por ID",
+      "method": "GET",
+      "url": "http://localhost:3000/produtos/1",
+      "body": {}
+    },
+    {
+      "_type": "request",
+      "_id": "req_pro_03",
+      "parentId": "fld_produtos",
+      "name": "POST - Criar",
+      "method": "POST",
+      "url": "http://localhost:3000/produtos",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"dc_produto\": \"Refrigerante Cola 2L\",\n  \"vinculo_imagem\": \"https://exemplo.com/imagens/refrigerante-cola-2l.png\",\n  \"preco\": 9.99,\n  \"estoque_minimo\": 10,\n  \"id_categoria\": 1,\n  \"id_fornecedor\": 1\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_pro_03b",
+      "parentId": "fld_produtos",
+      "name": "POST - Criar (erro - relacionamentos invalidos)",
+      "method": "POST",
+      "url": "http://localhost:3000/produtos",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"dc_produto\": \"Produto Sem Relacao\",\n  \"vinculo_imagem\": \"https://exemplo.com/imagens/produto.png\",\n  \"preco\": 5.5,\n  \"estoque_minimo\": 2,\n  \"id_categoria\": 999,\n  \"id_fornecedor\": 999\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_pro_04",
+      "parentId": "fld_produtos",
+      "name": "PUT - Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/produtos/1",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"dc_produto\": \"Refrigerante Cola 2L Zero\",\n  \"vinculo_imagem\": \"https://exemplo.com/imagens/refrigerante-cola-zero-2l.png\",\n  \"preco\": 10.49,\n  \"estoque_minimo\": 8,\n  \"id_categoria\": 1,\n  \"id_fornecedor\": 1\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_pro_05",
+      "parentId": "fld_produtos",
+      "name": "DELETE - Remover",
+      "method": "DELETE",
+      "url": "http://localhost:3000/produtos/1",
+      "body": {}
+    },
+
+    {
+      "_type": "request_group",
+      "_id": "fld_estoques",
+      "parentId": "wrk_stockplus_001",
+      "name": "Estoques"
+    },
+    {
+      "_type": "request",
+      "_id": "req_est_01",
+      "parentId": "fld_estoques",
+      "name": "GET - Listar todos",
+      "method": "GET",
+      "url": "http://localhost:3000/estoques",
+      "body": {}
+    },
+    {
+      "_type": "request",
+      "_id": "req_est_02",
+      "parentId": "fld_estoques",
+      "name": "GET - Buscar por ID",
+      "method": "GET",
+      "url": "http://localhost:3000/estoques/1",
+      "body": {}
+    },
+    {
+      "_type": "request",
+      "_id": "req_est_03",
+      "parentId": "fld_estoques",
+      "name": "POST - Criar",
+      "method": "POST",
+      "url": "http://localhost:3000/estoques",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"id_produto\": 1,\n  \"quantidade_atual\": 50\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_est_03b",
+      "parentId": "fld_estoques",
+      "name": "POST - Criar (erro - produto inexistente)",
+      "method": "POST",
+      "url": "http://localhost:3000/estoques",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"id_produto\": 999,\n  \"quantidade_atual\": 10\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_est_04",
+      "parentId": "fld_estoques",
+      "name": "PUT - Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/estoques/1",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"id_produto\": 1,\n  \"quantidade_atual\": 75\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_est_05",
+      "parentId": "fld_estoques",
+      "name": "DELETE - Remover",
+      "method": "DELETE",
+      "url": "http://localhost:3000/estoques/1",
+      "body": {}
+    },
+
+    {
+      "_type": "request_group",
+      "_id": "fld_lotes",
+      "parentId": "wrk_stockplus_001",
+      "name": "Lote Estoque"
+    },
+    {
+      "_type": "request",
+      "_id": "req_lot_01",
+      "parentId": "fld_lotes",
+      "name": "GET - Listar todos",
+      "method": "GET",
+      "url": "http://localhost:3000/lotes-estoque",
+      "body": {}
+    },
+    {
+      "_type": "request",
+      "_id": "req_lot_02",
+      "parentId": "fld_lotes",
+      "name": "GET - Buscar por ID",
+      "method": "GET",
+      "url": "http://localhost:3000/lotes-estoque/1",
+      "body": {}
+    },
+    {
+      "_type": "request",
+      "_id": "req_lot_03",
+      "parentId": "fld_lotes",
+      "name": "POST - Criar",
+      "method": "POST",
+      "url": "http://localhost:3000/lotes-estoque",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"id_produto\": 1,\n  \"dt_vencimento\": \"2026-12-31\",\n  \"quantidade_lote\": 30\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_lot_03b",
+      "parentId": "fld_lotes",
+      "name": "POST - Criar (erro - data invalida)",
+      "method": "POST",
+      "url": "http://localhost:3000/lotes-estoque",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"id_produto\": 1,\n  \"dt_vencimento\": \"data-invalida\",\n  \"quantidade_lote\": 20\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_lot_04",
+      "parentId": "fld_lotes",
+      "name": "PUT - Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/lotes-estoque/1",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"id_produto\": 1,\n  \"dt_vencimento\": \"2027-01-15\",\n  \"quantidade_lote\": 45\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_lot_05",
+      "parentId": "fld_lotes",
+      "name": "DELETE - Remover",
+      "method": "DELETE",
+      "url": "http://localhost:3000/lotes-estoque/1",
+      "body": {}
+    },
+
+    {
+      "_type": "request_group",
+      "_id": "fld_movimentacoes",
+      "parentId": "wrk_stockplus_001",
+      "name": "Movimentacoes"
+    },
+    {
+      "_type": "request",
+      "_id": "req_mov_01",
+      "parentId": "fld_movimentacoes",
+      "name": "GET - Listar todas",
+      "method": "GET",
+      "url": "http://localhost:3000/movimentacoes",
+      "body": {}
+    },
+    {
+      "_type": "request",
+      "_id": "req_mov_02",
+      "parentId": "fld_movimentacoes",
+      "name": "GET - Buscar por ID",
+      "method": "GET",
+      "url": "http://localhost:3000/movimentacoes/1",
+      "body": {}
+    },
+    {
+      "_type": "request",
+      "_id": "req_mov_03",
+      "parentId": "fld_movimentacoes",
+      "name": "POST - Criar entrada com lote",
+      "method": "POST",
+      "url": "http://localhost:3000/movimentacoes",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"tipo_movimento\": \"ENTRADA\",\n  \"quantidade\": 10,\n  \"id_lote\": 1,\n  \"id_produto\": 1\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_mov_03b",
+      "parentId": "fld_movimentacoes",
+      "name": "POST - Criar saida sem lote",
+      "method": "POST",
+      "url": "http://localhost:3000/movimentacoes",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"tipo_movimento\": \"SAIDA\",\n  \"quantidade\": 5,\n  \"id_produto\": 1,\n  \"id_lote\": null\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_mov_03c",
+      "parentId": "fld_movimentacoes",
+      "name": "POST - Criar (erro - sem produto e sem lote)",
+      "method": "POST",
+      "url": "http://localhost:3000/movimentacoes",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"tipo_movimento\": \"ENTRADA\",\n  \"quantidade\": 3,\n  \"id_produto\": null,\n  \"id_lote\": null\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_mov_04",
+      "parentId": "fld_movimentacoes",
+      "name": "PUT - Atualizar",
+      "method": "PUT",
+      "url": "http://localhost:3000/movimentacoes/1",
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"tipo_movimento\": \"SAIDA\",\n  \"quantidade\": 4,\n  \"id_lote\": 1,\n  \"id_produto\": 1\n}"
+      }
+    },
+    {
+      "_type": "request",
+      "_id": "req_mov_05",
+      "parentId": "fld_movimentacoes",
+      "name": "DELETE - Remover",
+      "method": "DELETE",
+      "url": "http://localhost:3000/movimentacoes/1",
+      "body": {}
+    }
+  ]
+}

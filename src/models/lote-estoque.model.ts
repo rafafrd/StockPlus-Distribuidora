@@ -70,9 +70,9 @@ export class LoteEstoque {
     return new LoteEstoque(
       row.id_lote,
       row.id_produto,
-      row.dt_vencimento === null ? null : LoteEstoque.converterData(row.dt_vencimento),
+      row.dt_vencimento === null ? null : LoteEstoque.converterDataVencimento(row.dt_vencimento),
       row.quantidade_lote ?? 0,
-      LoteEstoque.converterData(row.dt_entrada),
+      LoteEstoque.converterDataHora(row.dt_entrada),
     );
   }
 
@@ -118,8 +118,16 @@ export class LoteEstoque {
     return new Date(this._dataVencimento).getTime() < Date.now();
   }
 
-  private static converterData(data: Date | string): string {
+  private static converterDataHora(data: Date | string): string {
     return data instanceof Date ? data.toISOString() : data;
+  }
+
+  private static converterDataVencimento(data: Date | string): string {
+    if (data instanceof Date) {
+      return data.toISOString().slice(0, 10);
+    }
+
+    return data.includes('T') ? data.slice(0, 10) : data;
   }
 
   private static formatarDataObrigatoria(data: string): string {
@@ -136,7 +144,12 @@ export class LoteEstoque {
     }
 
     const texto = data.trim();
-    return texto.length === 0 ? null : texto;
+
+    if (texto.length === 0) {
+      return null;
+    }
+
+    return texto.includes('T') ? texto.slice(0, 10) : texto;
   }
 
   private static validarInteiroNaoNegativo(valor: number, campo: string): number {
