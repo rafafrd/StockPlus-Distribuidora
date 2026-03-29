@@ -1,0 +1,39 @@
+{
+  "name": "stockplus-distribuidora",
+  "version": "1.0.0",
+  "description": "A empresa **StockPlus Distribuidora**, atua no setor de **comercialização e distribuição de produtos variados para o varejo**. Com o crescimento do número de clientes e fornecedores, a empresa passou a lidar com um volume cada vez maior de produtos armazenados, tornando essencial um controle eficiente de estoque, entradas e saídas de mercadorias.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "node ./node_modules/typescript/bin/tsc",
+    "build:watch": "node ./node_modules/typescript/bin/tsc --watch",
+    "start": "node dist/server.js",
+    "dev": "node --watch dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafafrd/StockPlus-Distribuidora.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+    "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mysql2": "^3.18.0",
+    "package.json": "^2.0.1"
+  },
+  "bugs": {
+    "url": "https://github.com/rafafrd/StockPlus-Distribuidora/issues"
+  },
+  "homepage": "https://github.com/rafafrd/StockPlus-Distribuidora#readme"
+}
