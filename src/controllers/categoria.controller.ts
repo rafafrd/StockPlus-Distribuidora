@@ -7,7 +7,7 @@ export class CategoriaController {
   constructor() {
     this._service = new CategoriaService();
   }
-
+// lista todos as categorias
   public listarTodos = async (_req: Request, res: Response): Promise<void> => {
     try {
       const categorias = await this._service.listarTodos();
