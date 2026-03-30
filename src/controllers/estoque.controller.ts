@@ -7,7 +7,7 @@ export class EstoqueController {
   constructor() {
     this._service = new EstoqueService();
   }
-
+// lista todos os estoques
   public listarTodos = async (_req: Request, res: Response): Promise<void> => {
     try {
       const estoques = await this._service.listarTodos();
