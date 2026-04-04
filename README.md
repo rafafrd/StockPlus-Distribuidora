@@ -278,7 +278,7 @@ classDiagram
 
 ---
 
-## 🗄️ Banco de Dados
+## 🗄️ Banco de Dados (Database)
 
 O banco utiliza **MySQL 8** com chaves estrangeiras, restrições de integridade e registro automático de datas via `DEFAULT CURRENT_TIMESTAMP`.
 
